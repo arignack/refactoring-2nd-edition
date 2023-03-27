@@ -28,6 +28,10 @@ function statement(invoice, plays) {
     return result;
 }
 
+function playFor(aPerformance) {
+    return plays[aPerformance.playID];
+}
+
 function amountFor(play, perf) {
     let result = 0;
     switch (play.type) {
@@ -50,23 +54,16 @@ function amountFor(play, perf) {
     return result;
 }
 
-// fetch('./invoices.json')
-//     .then((response) => response.json())
-//     .then((json) => console.log(json));
+const invoicesResponse = await fetch("invoices.json");
+const invoices = await invoicesResponse.json();
 
+
+const playResponse = await fetch("plays.json");
+const plays = await playResponse.json();
 
 async function getData() {
-    const invoicesResponse = await fetch("invoices.json");
-    const invoices = await invoicesResponse.json();
-
-
-    const playResponse = await fetch("plays.json");
-    const plays = await playResponse.json();
-
-
     statement = statement(invoices, plays);
     console.log(statement);
-
 }
 
 getData();    

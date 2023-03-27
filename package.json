@@ -1,0 +1,20 @@
+{
+  "name": "refactoring-2nd-edition",
+  "version": "1.0.0",
+  "description": "Training code of the book Refactoring 2nd Edition, from Martin Fowler",
+  "main": "printBill.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arignack/refactoring-2nd-edition.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arignack/refactoring-2nd-edition/issues"
+  },
+  "homepage": "https://github.com/arignack/refactoring-2nd-edition#readme"
+}
