@@ -4,7 +4,7 @@
   "description": "Training code of the book Refactoring 2nd Edition, from Martin Fowler",
   "main": "printBill.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/arignack/refactoring-2nd-edition/issues"
   },
-  "homepage": "https://github.com/arignack/refactoring-2nd-edition#readme"
+  "homepage": "https://github.com/arignack/refactoring-2nd-edition#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
 }
