@@ -84,3 +84,4 @@ async function getData() {
 getData();
 
 module.exports = usd;
+module.exports = getData;
