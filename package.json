@@ -4,7 +4,8 @@
   "description": "Training code of the book Refactoring 2nd Edition, from Martin Fowler",
   "main": "printBill.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "npm test -- --coverage --watchAll=false"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,34 @@
   "homepage": "https://github.com/arignack/refactoring-2nd-edition#readme",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json",
+      "text",
+      "html",
+      "lcov"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*/*.d.ts",
+      "!src/**/*/Loadable.{js,jsx,ts,tsx}",
+      "!src/**/*/types.ts",
+      "!src/**/store.ts",
+      "!src/index.tsx",
+      "!src/serviceWorker.ts",
+      "!<rootDir>/node_modules/",
+      "!**/templates/**",
+      "!**/template/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 50
+      }
+    }
   },
   "dependencies": {
     "husky": "^8.0.3"

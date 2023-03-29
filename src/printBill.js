@@ -71,12 +71,12 @@ async function getData() {
     // const invoicesResponse = await fetch("./invoices.json");
     // const invoices = await invoicesResponse.json();
 
-    invoices = require('./invoices.json')
+    invoices = require('../invoices.json')
 
 
     // const playResponse = await fetch("./plays.json");
     // const plays = await playResponse.json();
-    plays = require('./plays.json')
+    plays = require('../plays.json')
 
     statement = statement(invoices, plays);
     console.log(statement);
