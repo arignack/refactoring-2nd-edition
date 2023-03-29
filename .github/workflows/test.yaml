@@ -14,6 +14,5 @@ jobs:
       - run: npm i
       - run: npm run coverage
       - name: Upload coverage file to Coveralls using lcov.info
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        uses: coverallsapp/github-action@v2
+          
