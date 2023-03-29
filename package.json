@@ -24,6 +24,7 @@
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.0",
     "jest": "^29.5.0",
+    "lint": "^0.8.19",
     "prettier": "^2.8.7"
   },
   "jest": {
