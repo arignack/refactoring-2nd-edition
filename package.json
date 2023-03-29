@@ -19,5 +19,8 @@
   "homepage": "https://github.com/arignack/refactoring-2nd-edition#readme",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "husky": "^8.0.3"
   }
 }

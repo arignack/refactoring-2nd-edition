@@ -8,14 +8,17 @@ function statement(invoice, plays) {
         totalAmount += amountFor(perf);
     }
 
-    let volumeCredits = 0;
-    for (let perf of invoice[0].performances) {
-        volumeCredits += volumeCreditsFor(perf);
-    }
-
     result += `Amount owed is ${usd(totalAmount / 100)}\n`;
-    result += `You earned ${volumeCredits} credits\n`;
+    result += `You earned ${totalVolumeCredits()} credits\n`;
     return result;
+
+    function totalVolumeCredits() {
+        let volumeCredits = 0;
+        for (let perf of invoice[0].performances) {
+            volumeCredits += volumeCreditsFor(perf);
+        }
+        return volumeCredits;
+    }
 }
 
 
@@ -61,16 +64,24 @@ function amountFor(perf) {
     return result;
 }
 
-const invoicesResponse = await fetch("invoices.json");
-const invoices = await invoicesResponse.json();
 
-
-const playResponse = await fetch("plays.json");
-const plays = await playResponse.json();
+let invoices, plays;
 
 async function getData() {
+    // const invoicesResponse = await fetch("./invoices.json");
+    // const invoices = await invoicesResponse.json();
+
+    invoices = require('./invoices.json')
+
+
+    // const playResponse = await fetch("./plays.json");
+    // const plays = await playResponse.json();
+    plays = require('./plays.json')
+
     statement = statement(invoices, plays);
     console.log(statement);
 }
 
-getData();    
+getData();
+
+module.exports = usd;
