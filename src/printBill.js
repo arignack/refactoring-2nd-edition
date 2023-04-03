@@ -49,11 +49,7 @@ function statement(invoice, plays) {
 	}
 
 	function totalAmount(data) {
-		let result = 0;
-		for (let perf of data.performances) {
-			result += perf.amount;
-		}
-		return result;
+		return data.performances.reduce((total, p) => total + p.amount, 0);
 	}
 
 	function volumeCreditsFor(aPerformance) {
@@ -91,13 +87,7 @@ function usd(aNumber) {
 }
 
 async function getData() {
-	// const invoicesResponse = await fetch("./invoices.json");
-	// const invoices = await invoicesResponse.json();
-
 	invoices = require("../invoices.json");
-
-	// const playResponse = await fetch("./plays.json");
-	// const plays = await playResponse.json();
 	plays = require("../plays.json");
 
 	statement = statement(invoices, plays);
