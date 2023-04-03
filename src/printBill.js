@@ -1,10 +1,15 @@
 function statement(invoice, plays) {
+	const statementData = createStatementData(invoice, plays);
+	return renderPlainText(statementData, plays);
+}
+
+function createStatementData(invoice, plays) {
 	const statementData = {};
 	statementData.customer = invoice[0].customer;
 	statementData.performances = invoice[0].performances.map(enrichPerformance);
 	statementData.totalAmount = totalAmount(statementData);
 	statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-	return renderPlainText(statementData, plays);
+	return statementData;
 
 	function enrichPerformance(aPerformance) {
 		const result = Object.assign({}, aPerformance);
