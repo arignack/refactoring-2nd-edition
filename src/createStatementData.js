@@ -20,13 +20,13 @@ export default function createStatementData(invoice, plays) {
 			case "tragedy":
 				thisAmount = 40000;
 				if (perf.audience > 30) {
-					result += 1000 * (perf.audience - 30);
+					thisAmount += 1000 * (perf.audience - 30);
 				}
 				break;
 			case "comedy":
 				thisAmount = 30000;
 				if (perf.audience > 20) {
-					result += 10000 + 500 * (perf.audience - 20);
+					thisAmount += 10000 + 500 * (perf.audience - 20);
 				}
 				thisAmount += 300 * perf.audience;
 				break;

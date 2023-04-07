@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Training code of the book Refactoring 2nd Edition, from Martin Fowler",
   "main": "printBill.js",
+  "type": "module",
   "scripts": {
-    "test": "jest",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "coverage": "npm test -- --coverage --watchAll=false",
     "prepare": "husky install"
   },
@@ -46,6 +47,7 @@
       "!**/templates/**",
       "!**/template/**"
     ],
+    "transform": {},
     "coverageThreshold": {
       "global": {
         "branches": 50,
